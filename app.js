@@ -1,13 +1,13 @@
 import express from 'express';
 import * as dotenv from 'dotenv'
-import { getJokeController, getTypeOfJokeController } from './src/controller/controller.js';
+import { getDiffTypeOfJokeController, getJokeController, } from './src/controller/controller.js';
 dotenv.config()
 
 const application = express()
 
 application.get('/get-all-joke-from-server', getJokeController)
-
-application.get('/get-type-of-joke',getTypeOfJokeController)
+// application.get('/get-type-of-joke',getTypeOfJokeController)
+application.get('/get-diff-type-of-joke/:type',getDiffTypeOfJokeController)
 
 const port = process.env.PORT
 
